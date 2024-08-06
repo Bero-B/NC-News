@@ -12,3 +12,9 @@ export function getArticleById(id){
         return data.article
     })
 }
+
+export function getCommentsForArticle(id){
+    return api.get(`/articles/${id}/comments`).then(({data}) => {
+        return data.comments
+    })
+}
