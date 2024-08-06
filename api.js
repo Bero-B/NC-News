@@ -18,3 +18,15 @@ export function getCommentsForArticle(id){
         return data.comments
     })
 }
+export function updateArticleVotes(id, vote) {
+    return api.patch(`/articles/${id}`, {inc_votes: vote})
+    .then(({data}) => {
+        return data.article
+    })
+}
+export function updateCommentVotes(id, vote){
+    return api.patch(`/comments/${id}`, {inc_votes: vote})
+    .then(({data}) => {
+        return data.comment
+    })
+}
