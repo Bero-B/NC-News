@@ -1,0 +1,19 @@
+main {
+    background-color: rgb(255, 255, 255);
+    margin-top: 60px;
+  }
+  .articles-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+  }
+  .see-all-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1, h2{
+    margin: 20px;
+    text-align: center;
+  }
