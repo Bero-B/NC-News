@@ -1,0 +1,19 @@
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.comments {
+    width: 80%;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid black;
+}
+.comments-list p {
+    width: 100%;
+}

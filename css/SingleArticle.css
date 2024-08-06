@@ -1,0 +1,38 @@
+.article-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(219, 210, 210, 0.473);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.article-container img {
+    width: 70%;
+}
+.votes-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.votes-container button {
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.votes-container.article {
+    margin-bottom: 20px;
+}
+p {
+    margin: 10px;
+}
