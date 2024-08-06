@@ -7,3 +7,8 @@ export function getAllArticles(){
        return data.articles
     })
 }
+export function getArticleById(id){
+    return api.get(`/articles/${id}`).then(({data}) => {
+        return data.article
+    })
+}

@@ -1,19 +1,16 @@
+import { Link } from "react-router-dom"
 import "../../../css/ArticleCard.css"
-export default function ArticleCard({img, topic, title, author, commentCount, articleDate}){
-    const parsedDateStr = new Date(articleDate)
-    let day = parsedDateStr.getUTCDate()
-    let month = parsedDateStr.getUTCMonth() + 1
-    let year = parsedDateStr.getUTCFullYear()
-    day = day < 10 ? `0` + day : day
-    month = month < 10 ? '0' + month : month;
+import { formatDate } from "../../../utils/utils"
+export default function ArticleCard({article}){
+    const {article_id, article_img_url, author, comment_count, created_at, title, topic} = article
+    const formattedDate = formatDate(created_at)
     return (
         <section className="article-cards">
-            <img className="article-img" src={img} alt="" />
             <h4>{topic}</h4>
-            <h3>{title}</h3>
+            <img className="article-img" src={article_img_url} alt="" />
+            <Link className="links title" to={`/articles/${article_id}`}><h3>{title}</h3></Link>
             <h5>By {author}</h5>
-            <p>Comments {commentCount}</p>
-            <p>Published {`${day}-${month}-${year}`}</p>
+            <p>Published {formattedDate}</p>
         </section>
     )
 }

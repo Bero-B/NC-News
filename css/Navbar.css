@@ -6,6 +6,7 @@
   }
 #logo {
     width: 110px;
+    object-fit:contain;
 }
 ul li {
     list-style-type: none;
@@ -34,4 +35,10 @@ header {
 }
 .links {
     color: white;
+}
+.links.title {
+    color: black;
+}
+.link.img {
+    width: 110px;
 }
