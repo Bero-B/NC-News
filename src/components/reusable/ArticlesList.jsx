@@ -1,9 +1,8 @@
 import ArticleCard from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { getAllArticles } from "../../../api";
-import Lottie from "lottie-react";
-import LoadingAnimation from "../../../LoadingAnimation.json"
 import "../../../css/ArticlesList.css"
+import Loading from "./Loading";
 
 export default function ArticlesList({limit}){
     const [articles, setArticles] = useState([])
@@ -16,17 +15,13 @@ export default function ArticlesList({limit}){
         })
     }, [])
     if(isLoading){
-        return (
-            <div>
-                <Lottie id="loading" animationData={LoadingAnimation} loop={true} />
-            </div>
-        )
+        return  <Loading/>
     }
     return (
         <ul className="articles-list">
             {articles.map((article) => {
                 return (
-                    <li key={article.article_id}><ArticleCard img={article.article_img_url} topic={article.topic} title={article.title} author={article.author} commentCount={article.comment_count} articleDate={article.created_at}/></li>
+                    <li key={article.article_id}><ArticleCard article={article}/></li>
                 )
             })}
         </ul>
