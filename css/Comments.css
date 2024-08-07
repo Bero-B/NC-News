@@ -4,9 +4,11 @@
     align-items: center;
 }
 .comments-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
 }
 .comments {
     width: 80%;
@@ -16,4 +18,15 @@
 }
 .comments-list p {
     width: 100%;
+}
+.comment-author {
+    color: rgb(164, 5, 5);
+}
+.author-date-container {
+    display: flex;
+    flex-direction: row;
+}
+.comment-date{
+    text-align: end;
+    font-size: 15px;
 }

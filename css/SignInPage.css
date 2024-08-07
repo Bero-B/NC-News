@@ -1,0 +1,48 @@
+.error {
+    color: red;
+}
+#sign-in-button {
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: rgba(79, 132, 139, 0.671);
+    border-radius: 10px;
+    min-width: 72px;
+    width: 10%;
+    cursor: pointer;
+
+}
+#sign-in-button:hover{
+    color: white;
+}
+#sign-in-button:active {
+    background-color: rgba(1, 52, 53, 0.9);
+}
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+    min-width: 210px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(114, 132, 134, 0.149);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.sign-in-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+#username {
+    font-size: 16px;
+    margin: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 71, 54, 0.858);
+    width: 100%;
+    padding: 5px;
+}
