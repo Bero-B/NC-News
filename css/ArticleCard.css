@@ -3,4 +3,17 @@
 }
 .article-cards{
     width: 300px;
+    
+}
+.article-cards h3 {
+    color: white;
+    padding: 10px;
+}
+.article-cards h4{
+    text-align: center;
+}
+.article-date {
+    text-align: end;
+    width: 100%;
+    color: white;
 }

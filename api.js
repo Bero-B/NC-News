@@ -30,3 +30,17 @@ export function updateCommentVotes(id, vote){
         return data.comment
     })
 }
+
+export function postCommentToArticle(articleId, user, commentText){
+    return api.post(`/articles/${articleId}/comments`, {username: user, body: commentText})
+    .then(({data}) => {
+        return data
+    })
+}
+
+export function getUserByUsername(username){
+    return api.get(`/users/${username}`)
+    .then(({data}) => {
+        return data.user
+    })
+}

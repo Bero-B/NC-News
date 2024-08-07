@@ -9,8 +9,12 @@ export default function ArticleCard({article}){
             <h4>{topic}</h4>
             <img className="article-img" src={article_img_url} alt="" />
             <Link className="links title" to={`/articles/${article_id}`}><h3>{title}</h3></Link>
-            <h5>By {author}</h5>
-            <p>Published {formattedDate}</p>
+            <div className="author-date-container article">
+                <h5 className="article-author">By {author}</h5>
+                <p className="article-date">Published {formattedDate}</p>
+            </div>
+            
+            
         </section>
     )
 }
