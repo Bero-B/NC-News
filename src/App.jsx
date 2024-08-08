@@ -6,6 +6,7 @@ import SingleArticle from "./components/main/SingleArticle"
 import Comments from "./components/main/Comments"
 import SignInPage from "./components/main/SignInPage"
 import AccountPage from "./components/main/AccountPage"
+import Topics from "./components/main/Topics"
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/articles/:article_id/comments" element={<Comments />}></Route>
         <Route path="/sign-in" element={<SignInPage/>}></Route>
         <Route path="/account" element={<AccountPage/>}></Route>
+        <Route path="/topics" element={<Topics/>}></Route>
      </Routes>
     </>
   )

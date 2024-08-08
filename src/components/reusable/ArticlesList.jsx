@@ -4,16 +4,16 @@ import { getAllArticles } from "../../../api";
 import "../../../css/ArticlesList.css"
 import Loading from "./Loading";
 
-export default function ArticlesList({limit}){
+export default function ArticlesList({limit, topic}){
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        getAllArticles().then((articles) => {
+        getAllArticles(topic).then((articles) => {
             const limitedArticles = limit ? articles.slice(0,limit) : articles
             setArticles(limitedArticles)
             setIsLoading(false)
         })
-    }, [])
+    }, [topic])
     if(isLoading){
         return  <Loading/>
     }
