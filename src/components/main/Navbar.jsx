@@ -16,7 +16,7 @@ export default function Navbar() {
           <Link className="links" to={"/articles"}>
             <li>Articles</li>
           </Link>
-          <Link className="links" >
+          <Link className="links" to={"/topics"} >
             <li>Topics</li>
           </Link>
             {user.username ? <Link className="links" to={'/account'}><li>{user.username}</li> </Link> : <Link className="links" to={"/sign-in"}> <li>Sign in</li> </Link>}

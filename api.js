@@ -2,8 +2,12 @@ import axios from "axios";
 const api = axios.create({
     baseURL: "https://nc-news-7fn6.onrender.com/api"
 })
-export function getAllArticles(){
-    return api.get("/articles").then(({data}) => {
+export function getAllArticles(topic){
+    let urlString = `/articles`
+    if (topic){
+        urlString += `?topic=${topic}`
+    }
+    return api.get(urlString).then(({data}) => {
        return data.articles
     })
 }
@@ -46,4 +50,10 @@ export function getUserByUsername(username){
 }
 export function deleteComment(commentId) {
     return api.delete(`/comments/${commentId}`)
+}
+export function getTopics(){
+    return api.get('/topics')
+    .then(({data}) => {
+        return data.topics
+    })
 }
