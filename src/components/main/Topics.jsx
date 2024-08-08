@@ -15,7 +15,6 @@ export default function Topics(){
             setTopics(topicsData)
         })
         .catch(() => {
-            console.log('inside catch')
             setIsError(true)
         })
         .finally(() => {

@@ -31,7 +31,6 @@ export default function DeleteComment({commentId, setTotalCommentCount, setComme
             })
         })
     }
-    console.log(isLoading)
     return (
         <div>
             <button id="delete-comment-button" onClick={handleClick}><i className="material-icons">&#xe872;</i></button>

@@ -28,8 +28,14 @@
     justify-content: space-evenly;
 }
 .article-card {
-    transition: all .3s ease-in-out;;
+    transition: all .3s ease-in-out;
 }
 .article-card:hover {
     transform: translateY(-10px);
+}
+.title-author-date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 155px;
 }

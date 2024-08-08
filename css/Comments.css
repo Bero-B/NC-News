@@ -16,9 +16,6 @@
     background-color: rgb(255, 255, 255);
     border-top: 1px solid black;
 }
-.comments-list p {
-    width: 100%;
-}
 .comment-author {
     color: rgb(164, 5, 5);
 }

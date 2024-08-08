@@ -4,10 +4,12 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/User";
 
 export default function Navbar() {
-  const {user} = useContext(UserContext)
+  const { user } = useContext(UserContext);
   return (
     <header>
-      <img id="logo" src="/NC-logo2.png" alt="NC-news logo" />
+      <Link className="links" to={"/"}>
+        <img id="logo" src="/NC-logo2.png" alt="NC-news logo" />
+      </Link>
       <nav>
         <ul>
           <Link className="links" to={"/"}>
@@ -16,11 +18,19 @@ export default function Navbar() {
           <Link className="links" to={"/articles"}>
             <li>Articles</li>
           </Link>
-          <Link className="links" to={"/topics"} >
+          <Link className="links" to={"/topics"}>
             <li>Topics</li>
           </Link>
-            {user.username ? <Link className="links" to={'/account'}><li>{user.username}</li> </Link> : <Link className="links" to={"/sign-in"}> <li>Sign in</li> </Link>}
-          
+          {user.username ? (
+            <Link className="links" to={"/account"}>
+              <li>{user.username}</li>{" "}
+            </Link>
+          ) : (
+            <Link className="links" to={"/sign-in"}>
+              {" "}
+              <li>Sign in</li>{" "}
+            </Link>
+          )}
         </ul>
       </nav>
     </header>

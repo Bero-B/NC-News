@@ -19,7 +19,7 @@ export function AllArticles (){
             <p>Sort By</p>
             <label htmlFor="sort_by">
                 <select onChange={handleChange} name="sort_by" id="sort_by">
-                   <option  value="created_at" selected>Date</option>
+                   <option  value="created_at" defaultValue={"created_at"}>Date</option>
                     <option value="comment_count">Comments</option>
                     <option value="votes">Votes</option>
                 </select>
@@ -28,7 +28,7 @@ export function AllArticles (){
             <p>Order</p>
             <label htmlFor="order">
                 <select onChange={handleChange} name="order" id="order">
-                    <option value="desc" selected>Descending</option>
+                    <option value="desc" defaultValue={"desc"}>Descending</option>
                     <option value="asc">Ascending</option>
                 </select>
             </label>

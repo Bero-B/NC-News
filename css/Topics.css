@@ -20,18 +20,35 @@
   border: none;
   border-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; 
-  background-color: rgb(255, 255, 255);
+  background: rgb(193,20,20);
+background: linear-gradient(27deg, rgba(193,20,20,1) 0%, rgba(0,0,0,1) 0%, rgba(150,138,138,1) 35%, rgba(0,0,0,1) 100%, rgba(255,255,255,1) 100%);
   padding: 10px;
   min-width: 170px;
   height: 180px;
   width: 238px;
+  transition: all .3s ease-in-out;
 }
+
+.topic-card:hover {
+    transform: translateY(-10px);
+}
+
 .topic-card p {
   margin: auto;
   text-align: center;
 }
 .links.topics {
-    color: black;
+    color: rgb(0, 0, 0);
+    width: 170px;
+}
+.links.topics p {
+    color: rgb(255, 255, 255);
+}
+.links.topics h2 {
+    border-bottom: 1px solid 
+    white;
+    padding-bottom: 5px;
+    width: 130px;
 }
 #not-found {
     width: 30%;

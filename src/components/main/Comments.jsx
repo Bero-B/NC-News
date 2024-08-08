@@ -59,7 +59,7 @@ export default function Comments({article_id, setTotalCommentCount}){
                             <p className="comment-author">{comment.author}</p>
                             <p className="comment-date">{formatDate(comment.created_at)}</p>
                         </div>   
-                            <p>{comment.body}</p>
+                            <p className="comments-text">{comment.body}</p>
                         <span className="votes-container">
                             <button  onClick={() => handleClick(comment.comment_id, 1)} className="voteUp">Vote up</button>
                             <span>{comment.votes}</span>
