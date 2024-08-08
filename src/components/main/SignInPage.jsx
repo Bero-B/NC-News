@@ -21,7 +21,6 @@ export default function SignInPage(){
             setIsEmptyError(true)
         } else {
             setIsEmptyError(false)
-      
             getUserByUsername(usernameInput.username)
             .then((userData) => {
                 setUser(userData)

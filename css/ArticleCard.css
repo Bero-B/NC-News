@@ -3,7 +3,6 @@
 }
 .article-cards{
     width: 300px;
-    
 }
 .article-cards h3 {
     color: white;
@@ -12,8 +11,25 @@
 .article-cards h4{
     text-align: center;
 }
+
 .article-date {
     text-align: end;
     width: 100%;
-    color: white;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+    font-size: 15px;
+    width: 150px;
+    border-radius: 40% 0% 0% 40%;
+}
+.author-date-container.article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.article-card {
+    transition: all .3s ease-in-out;;
+}
+.article-card:hover {
+    transform: translateY(-10px);
 }

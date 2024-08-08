@@ -54,8 +54,11 @@ header {
     color: white;
 }
 
-.links.title {
-    color: black;
+.links.title h3:hover {
+    color: rgb(191, 177, 177);
+}
+.links.title h3:active {
+    color: rgb(236, 215, 205);
 }
 .link.img {
     width: 110px;

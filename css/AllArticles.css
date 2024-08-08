@@ -1,0 +1,21 @@
+.filter-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+select {
+    width: 120px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+#sort_by {
+    margin-right: 50px;
+}
