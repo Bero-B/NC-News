@@ -2,10 +2,20 @@ import axios from "axios";
 const api = axios.create({
     baseURL: "https://nc-news-7fn6.onrender.com/api"
 })
-export function getAllArticles(topic){
+export function getAllArticles(topic, sortByQuery, orderQuery){
     let urlString = `/articles`
-    if (topic){
-        urlString += `?topic=${topic}`
+    const queryValues = []
+    if (topic) {
+        queryValues.push(`topic=${topic}`)
+    }
+    if (sortByQuery) {
+        queryValues.push(`sort_by=${sortByQuery}`)
+    }
+    if (orderQuery){
+        queryValues.push(`order=${orderQuery}`);
+    }
+    if (queryValues.length > 0) {
+        urlString += `?${queryValues.join('&')}`
     }
     return api.get(urlString).then(({data}) => {
        return data.articles

@@ -23,7 +23,7 @@ export default function Comments({article_id, setTotalCommentCount}){
             setIsLoading(false)
         })
     }, [article_id])
-    console.log(comments)
+
     function handleClick(commentId, vote){
         setComments((currComments) => {
             return currComments.map((comment) => {
