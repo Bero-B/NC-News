@@ -5,8 +5,12 @@ import "../../../css/Comments.css"
 import { updateCommentVotes } from "../../../api"
 import Loading from "../reusable/Loading"
 import AddComent from "./AddComment"
+import DeleteComment from "./DeleteComment"
+import { useContext } from "react"
+import { UserContext } from "../../contexts/User"
 
 export default function Comments({article_id, setTotalCommentCount}){
+    const {user} = useContext(UserContext)
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
@@ -19,7 +23,7 @@ export default function Comments({article_id, setTotalCommentCount}){
             setIsLoading(false)
         })
     }, [article_id])
-
+    console.log(comments)
     function handleClick(commentId, vote){
         setComments((currComments) => {
             return currComments.map((comment) => {
@@ -50,7 +54,7 @@ export default function Comments({article_id, setTotalCommentCount}){
             <ul className="comments-list">
             {comments.map((comment) => {
                 return (
-                    <li className="comments" key={comment.comment_id}>
+                        <li className="comments" key={comment.comment_id}>
                         <div className="author-date-container">
                             <p className="comment-author">{comment.author}</p>
                             <p className="comment-date">{formatDate(comment.created_at)}</p>
@@ -61,7 +65,8 @@ export default function Comments({article_id, setTotalCommentCount}){
                             <span>{comment.votes}</span>
                             <button  onClick={() => handleClick(comment.comment_id, -1)} className="voteDown">Vote down</button>
                         </span>
-                        {comment.error ? (<p className="error">Oops, vote did not go through. Try again later!</p>) : null}
+                        {user.username === comment.author ? <DeleteComment setComments={setComments} setTotalCommentCount={setTotalCommentCount} commentId={comment.comment_id}/> : null }
+                        {comment.error ? (<p className="error">Oops, vote did not go through. Try again later!</p>) : null}   
                     </li>
                 )
             })}

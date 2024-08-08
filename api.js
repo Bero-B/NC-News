@@ -44,3 +44,6 @@ export function getUserByUsername(username){
         return data.user
     })
 }
+export function deleteComment(commentId) {
+    return api.delete(`/comments/${commentId}`)
+}

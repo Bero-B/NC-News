@@ -1,0 +1,18 @@
+.success {
+    color: rgb(18, 150, 51);
+}
+#deleting {
+    width: 20%;
+}
+.material-icons {
+    color: rgba(0, 0, 0, 0.929);
+    font-size: 28px;
+}
+#delete-comment-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.material-icons:active {
+    color: rgb(211, 145, 145);
+}

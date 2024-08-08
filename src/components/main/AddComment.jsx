@@ -6,6 +6,7 @@ import ErrorAnimation from "../reusable/ErrorAnimation"
 import { Link } from "react-router-dom"
 import "../../../css/AddComment.css"
 import PostingAnimation from "../reusable/PostingAnimation"
+import { getCommentsForArticle } from "../../../api"
 
 export default function AddComent({article_id, setComments, setTotalCommentCount}){
     const {user} = useContext(UserContext)
@@ -27,14 +28,6 @@ export default function AddComent({article_id, setComments, setTotalCommentCount
             setIsPosting(true)
             setUserComment('')
             setIsLoggedError(false)
-            const temporaryComment = {
-                comment_id: Date.now(),
-                body: userComment,
-                article_id: article_id,
-                author: user.username,
-                votes: 0,
-                created_at: new Date().toISOString() 
-            }
             setTotalCommentCount((currTotalCommentCount) => {
                 return currTotalCommentCount + 1
             })
@@ -42,12 +35,12 @@ export default function AddComent({article_id, setComments, setTotalCommentCount
             .then(() => {
                 setIsPosting(false)
                 setIsError(false)
-                setComments((currComments) => {
-                    return [...currComments, temporaryComment]
-                })
-               
+                return getCommentsForArticle(article_id)
+                .then((updatedComments) => {
+                    setComments(updatedComments)
+                })               
             })
-            .catch((err) => {
+            .catch(() => {
                 setIsPosting(false)
                 setIsError(true)
                 setTotalCommentCount((currTotalCommentCount) => {
