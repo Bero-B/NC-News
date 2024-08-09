@@ -55,7 +55,7 @@ export default function Comments({article_id, setTotalCommentCount}){
             {comments.map((comment) => {
                 return (
                         <li className="comments" key={comment.comment_id}>
-                        <div className="author-date-container">
+                        <div className="author-date-container-comments">
                             <p className="comment-author">{comment.author}</p>
                             <p className="comment-date">{formatDate(comment.created_at)}</p>
                         </div>   

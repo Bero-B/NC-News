@@ -19,3 +19,24 @@ select {
 #sort_by {
     margin-right: 50px;
 }
+.page-buttons {
+    margin: 25px;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 7px;
+}
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.page-buttons:active {
+    color: rgb(23, 95, 106);
+}
+.page-buttons:hover{
+    background-color: rgba(158, 146, 146, 0.197);
+    border-radius: 20px;
+}

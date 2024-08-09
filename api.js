@@ -2,7 +2,7 @@ import axios from "axios";
 const api = axios.create({
     baseURL: "https://nc-news-7fn6.onrender.com/api"
 })
-export function getAllArticles(topic, sortByQuery, orderQuery){
+export function getAllArticles(topic, sortByQuery, orderQuery, page, limit){
     let urlString = `/articles`
     const queryValues = []
     if (topic) {
@@ -14,11 +14,17 @@ export function getAllArticles(topic, sortByQuery, orderQuery){
     if (orderQuery){
         queryValues.push(`order=${orderQuery}`);
     }
+    if(page) {
+        queryValues.push(`p=${page}`)
+    }
+    if(limit) {
+        queryValues.push(`limit=${limit}`)
+    }
     if (queryValues.length > 0) {
         urlString += `?${queryValues.join('&')}`
     }
     return api.get(urlString).then(({data}) => {
-       return data.articles
+        return data
     })
 }
 export function getArticleById(id){
