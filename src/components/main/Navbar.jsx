@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <header>
       <Link className="links" to={"/"}>
-        <img id="logo" src="/NC-logo2.png" alt="NC-news logo" />
+        <img id="logo" src="../../assets/NC-logo2.png" alt="NC-news logo" />
       </Link>
       <button className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu} aria-label="Toggle navigation">
         <div className="bar1"></div>
