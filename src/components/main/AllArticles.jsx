@@ -33,22 +33,25 @@ export function AllArticles (){
     return (
         <main>
             <div className="filter-container">
-            <p>Sort By</p>
-            <label htmlFor="sort_by">
-                <select onChange={handleChange} name="sort_by" id="sort_by">
-                   <option  value="created_at" defaultValue={"created_at"}>Date</option>
-                    <option value="comment_count">Comments</option>
-                    <option value="votes">Votes</option>
-                </select>
-            </label>
-            
-            <p>Order</p>
-            <label htmlFor="order">
-                <select onChange={handleChange} name="order" id="order">
-                    <option value="desc" defaultValue={"desc"}>Descending</option>
-                    <option value="asc">Ascending</option>
-                </select>
-            </label>
+                <div className="filters">
+                    <p>Sort By</p>
+                    <label htmlFor="sort_by">
+                        <select onChange={handleChange} name="sort_by" id="sort_by">
+                        <option  value="created_at" defaultValue={"created_at"}>Date</option>
+                            <option value="comment_count">Comments</option>
+                            <option value="votes">Votes</option>
+                        </select>
+                    </label>
+                </div>
+                <div className="filters">
+                <p>Order</p>
+                    <label htmlFor="order">
+                        <select onChange={handleChange} name="order" id="order">
+                            <option value="desc" defaultValue={"desc"}>Descending</option>
+                            <option value="asc">Ascending</option>
+                        </select>
+                    </label>
+                </div>            
             </div>
             <ArticlesList page={page} setTotalArticles={setTotalArticles} topic={topic} sortByQuery={sortByQuery} orderQuery={orderQuery}  />
             <div className="pagination-container">

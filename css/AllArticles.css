@@ -21,6 +21,7 @@ select {
 }
 .page-buttons {
     margin: 25px;
+    color: black;
     border: none;
     background-color: transparent;
     font-size: 15px;
@@ -39,4 +40,9 @@ select {
 .page-buttons:hover{
     background-color: rgba(158, 146, 146, 0.197);
     border-radius: 20px;
+}
+.filters {
+    text-align: center;
+    width: 120px;
+    margin: 20px;
 }

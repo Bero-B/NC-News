@@ -16,7 +16,6 @@ export default function Home(){
             <div className="see-all-container">
                 <Link className="links home-page" to={"/articles"}><button>See all articles</button></Link>
             </div>
-            
         </main>
     )
 }

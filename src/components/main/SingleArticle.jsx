@@ -60,8 +60,8 @@ export default function SingleArticle(){
                 <h4>{article.topic}</h4>
                 <img src={article.article_img_url} alt="" />
                 <h5>By {article.author}</h5>
-                <p>Published {formattedDate}</p>
-                <p>{article.body}</p>
+                <p id="article-publish-date">Published {formattedDate}</p>
+                <p className="article-text">{article.body}</p>
                 <p>Comments: {article.comment_count + totalCommentCount}</p>
                 <span className="votes-container article">
                     <button onClick={handleClick} className="voteUp">Vote up</button>

@@ -15,7 +15,7 @@ main {
   margin-top: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 h1,
 h2 {
