@@ -25,6 +25,7 @@
     justify-content: space-between;
 }
 .comment-date{
+    color: rgba(0, 0, 0, 0.548);
     text-align: end;
     font-size: 15px;
 }
